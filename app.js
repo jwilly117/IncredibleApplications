@@ -1,6 +1,10 @@
 
 
-$("#choose").on("click", function(){
+// Start up Form
+
+$("#chooseStartUp").on("click", function(){
     $("input").trigger("click");
-    alert("Hello");
+    alert("Please use the file chooser to upload the completed Start up form");
 })
+
+// 
