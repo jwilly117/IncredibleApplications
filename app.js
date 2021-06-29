@@ -1,5 +1,4 @@
 
-
 // Start up Form
 
 $("#chooseStartUp").on("click", function(){
@@ -7,4 +6,10 @@ $("#chooseStartUp").on("click", function(){
     alert("Please use the file chooser to upload the completed Start up form");
 })
 
-// 
+// W9 Documets
+
+
+//  Independent Contractor Agreement
+
+
+//  COI Example for Installers

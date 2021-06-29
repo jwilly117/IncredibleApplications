@@ -14,6 +14,12 @@
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+
+    
+
+
     <!-- 
         1. Make JT
         2. 
@@ -28,7 +34,7 @@
             width: 315px;
         }
         .form-control{
-            width: 345px;
+            width: 34s5px;
         }
         body{
             font-weight: bold;
@@ -64,87 +70,28 @@
             <!-- <span class="input-group-text" id="inputGroup-sizing-sm">Small</span> -->
 
             First Name
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" id="firstName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             Last Name
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" id="lastName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             Phone Number  
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" id="phone" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             Address 
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" id="address" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             City *
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" id="city" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             State *
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" id="state" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             Zip Code 
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" id="zip" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             <hr>
 
 
-            <!-- Background Check -->
-            Do you consent to a background check?   
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" style="margin-left: 100px" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Please Choose
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Yes</a></li>
-                  <li><a class="dropdown-item" href="#">No</a></li>
-                  <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                </ul>
-              </div>
-
-              
-              <hr>
-              <div style="text-align: center;">Required Documents
-              
-
-              <br>
-              <!-- List of Required Documents to download and complete, available right here
-              later, this will need to be replaced with Javascript to automatically construct PDFs -->
-
-              Start Up Form <br>
-              <a href="files/Start up form.pdf" type="button" class="btn btn-secondary" >Download</a>
-
-              <button type="button" class="btn btn-secondary" id="chooseStartUp" >File Chooser</button>
-              <br><br>
-
-              W9- Download and Submit <br>
-              <a href="files/fw9 Blank Form.pdf" type="button" class="btn btn-secondary" >Download</a>
-
-              <button type="button" class="btn btn-secondary" >File Chooser</button>
-              <br><br>
-
-              Independent Contractor Agreement <br>
-              <a href="files/Independent Contractor Agreement Revised (2018) (00013839xEEA23)pdf.pdf" type="button" class="btn btn-secondary" >Download</a>
-
-              <button type="button" class="btn btn-secondary" >File Chooser</button> <br><br>
-
-              COI Example for Installers <br>
-              <a href="files/COI example installers Workmans comp.pdf" type="button" class="btn btn-secondary" >Download</a>
-
-              <!-- <button type="button" class="btn btn-secondary" >File Chooser</button> -->
-              
-            </div>
-
-              <br>
-              <hr>
-              <div class="liscense" style="text-align: center;">
-                Please upload a picture of your drivers liscense <br>
-                <button type="button" class="btn btn-secondary" >Upload Liscense</button>
-              </div>
-              <hr>
-
-              <div class="badgeImage" style="text-align: center;">
-                Please upload a badge image of yourself with a white background <br>
-                <button type="button" class="btn btn-secondary" >Upload Badge</button>
-              </div>
-
-              
+            
 
               <hr>
               <div style="text-align:center">
                 Please Review Before Submission <br>
-                <button type="button" class="btn btn-success" style="margin-left: 10px;">Submit</button>
+                <button type="button" id="submission" class="btn btn-success" style="margin-left: 10px;">Submit</button>
 
               </div>
 
@@ -153,7 +100,49 @@
             </h6>
             
 
-          
+            <script>
+              // Your web app's Firebase configuration
+                  var firebaseConfig = {
+                    apiKey: "AIzaSyDlcbijm1mEcCm4lL2Sl2Wu8VL00NjWhdA",
+                    authDomain: "incredible-applications.firebaseapp.com",
+                    projectId: "incredible-applications",
+                    storageBucket: "incredible-applications.appspot.com",
+                    messagingSenderId: "811804729674",
+                    appId: "1:811804729674:web:7ded90ff95e34888ed21b3"
+                  };
+                  
+               // Initialize Firebase
+               firebase.initializeApp(firebaseConfig);
+        
+               var database = firebase.database();
+
+
+              $("#submission").on("click", function(){
+
+                // Get all values from input fields
+                var firstName = $("#firstName").val();
+                var lastName = $("#lastName").val();
+                var phone = $("#phone").val();
+                var address = $("#address").val();
+                var city = $("#city").val();
+                var state = $("#state").val();
+                var zip = $("#zip").val();
+
+                // Test the outputs
+                
+                database.ref("/applicants").set({
+                  firstName: firstName,
+                  lastName: lastName,
+                  phone: phone,
+                  address: address,
+                  city: city,
+                  state: state,
+                  zip: zip,
+                  called: true,
+                })
+              })
+
+            </script>
 
     </div>
 
