@@ -117,7 +117,20 @@
               let snapLastName = snap.val().lastName;
               let snapAddress = snap.val().address;
               let snapCity = snap.val().city;
-              let snapState = snap.val().state;
+              let snapZip = snap.val().zip;
+              let snapEmail = snap.val().email;
+              let snapPhone = snap.val().phone;
+              let snapCalledApplicant;
+              if (snap.val().calledApplicant == true){
+                snapCalledApplicant = "Yes"
+              } 
+              else {
+                snapCalledApplicant = "No"
+              }
+              let snapDocuments = "Waiting";
+              
+
+
 
 
               
@@ -128,13 +141,16 @@
                   <td>${snapLastName}</td>
                   <td>${snapAddress}</td>
                   <td>${snapCity}</td>
-                  <td>${snapState}</td>
-                  <td>${snapLastName}</td>
-                  <td>${snapLastName}</td>
-                  <td>${snapLastName}</td>
-                  <td>${snapLastName}</td>
-                  <td>${snapLastName}</td>
-                  <td>${snapLastName}</td>
+                  <td>${snapZip}</td>
+                  <td>${snapPhone}</td>
+                  <td>${snapEmail}</td>
+                  
+                  <td>${snapCalledApplicant}</td>
+                  <td>${snapDocuments}</td>
+                  <td>${snapDocuments}</td>
+                  <td>${snapDocuments}</td>
+                  <td>${snapDocuments}</td>
+                  <td>${snapDocuments}</td>
                 </tr>
               `)
               console.log(snapLastName + " " +  snapFirstName)
