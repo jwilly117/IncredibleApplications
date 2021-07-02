@@ -4,4 +4,3 @@ $("tr").on("click", function(){
     alert(this);
     console.log(this);
 })
-

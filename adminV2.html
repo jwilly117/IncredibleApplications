@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel Version 2</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+
+    <link rel="stylesheet" href="admin.css">
+
+    
+    
+</head>
+<body>
+    
+    <!-- Container -->
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="images/logo2.jpg" alt="" width="35" height="34" id="logo" class="d-inline-block align-text-top">
+                Incredible - Applicants <a href="admin.html" id="right">Version1</a>
+              </a>
+            </div>
+          </nav>
+
+
+        <div>
+            <h1>Current Applications</h1>
+
+            <hr>
+
+            
+            <!-- Version 2  -->
+            <!-- This version will align applicants in cards instead of line items on a table
+            which should make it easier to manipulate, since all cells arent tied together -->
+            <div class="row">
+                <div class="col-md-3">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi odio rerum dolore esse dolores repellendus mollitia magni suscipit id aliquid saepe vel fugiat fugit voluptatum, totam sapiente excepturi tempora perferendis!
+                </div>
+                <div class="col-md-3">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi odio rerum dolore esse dolores repellendus mollitia magni suscipit id aliquid saepe vel fugiat fugit voluptatum, totam sapiente excepturi tempora perferendis!
+                </div>
+                <div class="col-md-3">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi odio rerum dolore esse dolores repellendus mollitia magni suscipit id aliquid saepe vel fugiat fugit voluptatum, totam sapiente excepturi tempora perferendis!
+                </div>
+                <div class="col-md-3">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi odio rerum dolore esse dolores repellendus mollitia magni suscipit id aliquid saepe vel fugiat fugit voluptatum, totam sapiente excepturi tempora perferendis!
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="width: 22.2rem;">
+                        <!-- <img src="images/placeholderPortrait2.png" class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <img src="images/placeholderPortrait2.png" style="float: left; margin-right: 10px;"  alt="">
+                          <h5 class="card-title">Corin Griffin|| <span id="role">Office</span></h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Details</a>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card" style="width: 22.2rem;">
+                        <!-- <img src="images/placeholderPortrait2.png" class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <img src="images/placeholderPortrait2.png" style="float: left; margin-right: 10px;"  alt="">
+                          <h5 class="card-title">Jake Williams || <span id="role">Office</span></h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Details</a> 
+                          <button>click me</button>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card" style="width: 22.2rem;">
+                        <!-- <img src="images/placeholderPortrait2.png" class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <img src="images/placeholderPortrait2.png" style="float: left; margin-right: 10px;"  alt="">
+                          <h5 class="card-title">Kayla Hester || <span id="role">Office</span></h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Details</a>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card" style="width: 22.2rem;">
+                        <!-- <img src="images/placeholderPortrait2.png" class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <img src="images/placeholderPortrait2.png" style="float: left; margin-right: 10px;"  alt="">
+                          <h5 class="card-title">James Hibbet || <span id="role">Office</span></h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Details</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    
+
+    <script>
+
+      // Below will be the code to pull from firebase when a new child is added
+      // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyDlcbijm1mEcCm4lL2Sl2Wu8VL00NjWhdA",
+                authDomain: "incredible-applications.firebaseapp.com",
+                projectId: "incredible-applications",
+                storageBucket: "incredible-applications.appspot.com",
+                messagingSenderId: "811804729674",
+                appId: "1:811804729674:web:7ded90ff95e34888ed21b3"
+                };
+                  
+               // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        
+            var database = firebase.database();
+
+            database.ref("/applicants").on("child_added", function(snap){
+              console.log(snap.val());
+              // $("#applicantsPanel").append("hello");
+
+              // Store all remote values in local variables
+              let snapFirstName = snap.val().firstName;
+              let snapLastName = snap.val().lastName;
+              let snapAddress = snap.val().address;
+              let snapCity = snap.val().city;
+              let snapZip = snap.val().zip;
+              let snapEmail = snap.val().email;
+              let snapPhone = snap.val().phone;
+              let snapCalledApplicant;
+              if (snap.val().calledApplicant == true){
+                snapCalledApplicant = "Yes"
+              } 
+              else {
+                snapCalledApplicant = "No"
+              }
+              let snapDocuments = "Waiting";
+              
+
+
+
+
+              
+
+              $("#applicantsPanel").append(`
+                <tr id="green">
+                  <td>${snapFirstName}</td>
+                  <td>${snapLastName}</td>
+                  
+                  <td>${snapAddress}</td>
+                  <td>${snapCity}</td>
+                  <td>${snapZip}</td>
+                  <td>${snapPhone}</td>
+                  <td>${snapEmail}</td>
+                  
+                  <td>${snapCalledApplicant}</td>
+                  <td>${snapDocuments}</td>
+                  <td>${snapDocuments}</td>
+                  <td>${snapDocuments}</td>
+                  <td>${snapDocuments}</td>
+                  <td>${snapDocuments}</td>
+                  <td>${snapDocuments}</td>
+
+                </tr>
+              `)
+              console.log(snapLastName + " " +  snapFirstName)
+              
+            })
+
+            
+
+
+    </script>
+
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+/* need to style card */
+
+.card{
+    width: 500px;
+    margin-bottom:10px;
+    background-color: rgb(235, 216, 165);
+    border-radius: 12px;
+}
+
+.navbar{
+    background: aqua;
+    height: 75px;
+}
+body{
+    background-color: grey;
+}
+#green{
+  background-color: green;
+}
+#yellow{
+  background-color: yellow;
+  color: black;
+}
+img{
+    height: 100px;
+    width: 100px;
+}
+#logo{
+    height: 35px;
+    width: 35px;
+}
+
+#role{
+    font-size: smaller;
+    font-style: italic;
+}
+
+#right{
+    text-align: right;
+}
