@@ -38,3 +38,25 @@ img{
 #right{
     text-align: right;
 }
+
+button
+button:hover{
+    background-color: blue;
+}
+
+#check{
+    background-image: "/images/logo.jpg";
+}
+#statusIcon{
+    border-radius: 15px;
+    height: 45px;
+    width: 45px;
+
+}
+
+#statusIcon:hover{
+    border-radius: 15px;
+    height: 45px;
+    width: 45px;
+    ;
+}
