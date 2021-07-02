@@ -5,6 +5,9 @@
     margin-bottom:10px;
     background-color: rgb(235, 216, 165);
     border-radius: 12px;
+    border-width: 24px;
+    border: rgb(108, 219, 219);
+    border-style: solid;
 }
 
 .navbar{
@@ -58,5 +61,5 @@ button:hover{
     border-radius: 15px;
     height: 45px;
     width: 45px;
-    ;
+    content: "images/checks/checkblank.png";
 }
