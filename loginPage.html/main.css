@@ -1,10 +1,10 @@
 body{
-    --color-primary: #6a9dfd;
-    --color-primary-dark: #0c5fbd;
+    --color-primary: #1e99d3;
+    --color-primary-dark: #343a8b;
     --color-secondary: #252c6a;
     --color-error: red;
     --color-success: green;
-    --border-radius: 15px;
+    --border-radius: 10px;
 
     margin: 0;
     height: 100vh;
@@ -20,7 +20,7 @@ body{
     max-width: 400px;
     margin: 1rem;
     padding: 2rem;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
     border-radius: var(--border-radius);
     background: #fff;
 }
@@ -29,6 +29,10 @@ body{
 .form-input,
 .form__button{
     font-family: sans-serif;
+}
+
+.form--hidden{
+    display: none;
 }
 
 .form > *:first-child{
@@ -91,4 +95,12 @@ body{
     outline: none;
     cursor: pointer;
     background: var(--color-primary-dark);
+}
+
+.form__button:active{
+    transform: scale(0.98);
+}
+
+.form__button:hover{
+    background: rgb(86, 86, 156);
 }
