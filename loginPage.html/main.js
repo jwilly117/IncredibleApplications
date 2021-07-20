@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const createAccountForm = document.querySelector("#createAccount");
 
     document.querySelector("#linkCreateAccount").addEventListener("click", function(){
+        preventDefault
         loginForm.classList.add("form--hidden");
         createAccountForm.classList.remove("form--hidden");
 
@@ -14,3 +15,4 @@ document.addEventListener("DOMContentLoaded", function(){
 
     })
 })
+
