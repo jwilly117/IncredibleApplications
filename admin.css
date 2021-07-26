@@ -23,11 +23,11 @@ body{
   background-color: yellow;
   color: black;
 }
-img{
+/* img{
     height: 100px;
 
     width: 100px;
-}
+} */
 #logo{
     height: 35px;
     width: 35px;
@@ -64,3 +64,11 @@ button:hover{
     content: "images/checks/checkblank.png";
 }
 
+.entry{
+    float: right;
+}
+
+#number{
+    display: block;
+    float: left;
+}
