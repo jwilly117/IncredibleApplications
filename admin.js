@@ -87,4 +87,6 @@
 
     })
 
-    
+    $(this).click(function(){
+        console.log(document.getElementById(this));
+    })
