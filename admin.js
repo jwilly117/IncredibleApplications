@@ -71,6 +71,20 @@
       `)
       console.log(snapLastName + " " +  snapFirstName)
       
+      $(".fill").append(`
+      <div class="entries">
+      <div class="entry" id="name">
+        hello
+      </div>
+      <div class="entry" id="${snapFirstName}">
+        fdsa
+      </div>
+      <div class="entry" id="city">
+        fdsa
+      </div>
+    </div>
+      `)
+
     })
 
     
