@@ -66,12 +66,21 @@ button:hover{
 
 .entry{
     float: left;
-    height: 40px;
-    width: 33%;
+    height: 45px;
+    width: 11%;
     display: block;
     border-style: solid;
     border-width: 1px;
-    border-color: white;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(68, 62, 62);
+    color: white;
+    padding-left: 5px;
+    padding-top: 3px;
+}
+.entry-dropdown{
+    width: 9%;
+    text-align: center;
+    
 }
 
 #number{
@@ -79,4 +88,10 @@ button:hover{
 }
 #Jake{
     background-color: blue;
+}
+#email{
+    width: 13%;
+}
+.fill{
+    margin-bottom: 3px;
 }

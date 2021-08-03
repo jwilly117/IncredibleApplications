@@ -44,49 +44,93 @@
       
 
 
+    //   ---------------------------------------------------
 
 
       
 
-      $("#applicantsPanel").append(`
-        <tr id="green">
-          <td>${snapFirstName}</td>
-          <td>${snapLastName}</td>
+    //   $("#applicantsPanel").append(`
+    //     <tr id="green">
+    //       <td>${snapFirstName}</td>
+    //       <td>${snapLastName}</td>
           
-          <td>${snapAddress}</td>
-          <td>${snapCity}</td>
-          <td>${snapZip}</td>
-          <td>${snapPhone}</td>
-          <td>${snapEmail}</td>
+    //       <td>${snapAddress}</td>
+    //       <td>${snapCity}</td>
+    //       <td>${snapZip}</td>
+    //       <td>${snapPhone}</td>
+    //       <td>${snapEmail}</td>
           
-          <td>${snapCalledApplicant}</td>
-          <td>${snapDocuments}</td>
-          <td>${snapDocuments}</td>
-          <td>${snapDocuments}</td>
-          <td>${snapDocuments}</td>
-          <td>${snapDocuments}</td>
-          <td>${snapDocuments}</td>
+    //       <td>${snapCalledApplicant}</td>
+    //       <td>${snapDocuments}</td>
+    //       <td>${snapDocuments}</td>
+    //       <td>${snapDocuments}</td>
+    //       <td>${snapDocuments}</td>
+    //       <td>${snapDocuments}</td>
+    //       <td>${snapDocuments}</td>
 
-        </tr>
-      `)
+    //     </tr>
+    //   `)
       console.log(snapLastName + " " +  snapFirstName)
+
+    //   ---------------------------------------------------
       
-      $(".fill").append(`
-      <div class="entries">
-      <div class="entry" id="name">
-        hello
-      </div>
-      <div class="entry" id="${snapFirstName}">
-        fdsa
-      </div>
-      <div class="entry" id="city">
-        fdsa
-      </div>
-    </div>
-      `)
+    //   $(".fill").append(`
+    //   <div class="entries">
+    //   <div class="entry" id="name">
+    //     hello
+    //   </div>
+    //   <div class="entry" id="${snapFirstName}">
+    //     fdsa
+    //   </div>
+    //   <div class="entry" id="city">
+    //     fdsa
+    //   </div>
+    // </div>
+    //   `)
 
     })
 
-    $(this).click(function(){
-        console.log(document.getElementById(this));
+    // $(this).click(function(){
+    //     console.log(document.getElementById(this));
+    // })
+
+    $("#name").click(function(){
+        console.log(this.value);
     })
+
+    if($("#entrySelector").value == 'VM'){
+        $("#entrySelector").css("background-color", 'red');
+    }
+
+    // Create an onchange listener
+    document.getElementById("calledSelector").onchange = changeListener;
+
+    function changeListener(){
+        var value = this.value
+        console.log(value);
+
+        // From here, we will reassign the values in the database
+        // Also reassign the colors
+        if(this.value == 'Yes'){
+            $(this).css('background-color', 'green');
+            $(this).css('color', 'white');
+        }
+        if(this.value == 'VM'){
+            $(this).css('background-color', 'skyblue');
+            $(this).css('color', 'black');
+        }
+        if(this.value == 'No'){
+            $(this).css('background-color', 'darkgrey');
+            $(this).css('color', 'white');
+        }
+        
+
+    }
+
+    // Just a test to see if jquery is working correctly
+
+    $("#name").click(function(){
+        console.log(this);
+    })
+
+    
